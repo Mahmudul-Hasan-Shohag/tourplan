@@ -17,9 +17,9 @@ use App\Http\Controllers\Backend\AdminController;
 Route::get('/adminlogin',[AdminController::class,'adminlogin'])->name('admin.login');
 Route::post('/postadminlogin',[AdminController::class,'postadminlogin'])->name('post.adminlogin');
 Route::get('/adminlogout',[AdminController::class,'adminlogout'])->name('admin.logout');
-// Route::get('/', function () {
-//     return view('backend.master');
-// });
+Route::get('/', function () {
+    return view('backend.login');
+});
 Route::group(['prefix'=>'admin'],function(){
 
     Route::group(['middleware'=>'auth'],function(){
