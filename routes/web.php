@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\AdminController;
 /*
@@ -13,13 +14,22 @@ use App\Http\Controllers\Backend\AdminController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+
+//Frontend
+Route::get('/',[HomeController::class,'website']);
+
+
+
+//Backend
 //Admin Login
 Route::get('/adminlogin',[AdminController::class,'adminlogin'])->name('admin.login');
 Route::post('/postadminlogin',[AdminController::class,'postadminlogin'])->name('post.adminlogin');
 Route::get('/adminlogout',[AdminController::class,'adminlogout'])->name('admin.logout');
-Route::get('/', function () {
-    return view('backend.login');
-});
+// // Route::get('/', function () {
+// //     return view('backend.login');
+
+// });
 Route::group(['prefix'=>'admin'],function(){
 
     Route::group(['middleware'=>'auth'],function(){
