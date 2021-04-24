@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\Backend\SpotController;
 use App\Http\Controllers\Backend\AdminController;
 /*
 |--------------------------------------------------------------------------
@@ -17,7 +18,7 @@ use App\Http\Controllers\Backend\AdminController;
 
 
 //Frontend
-Route::get('/',[HomeController::class,'website']);
+Route::get('/',[HomeController::class,'website'])->name('homepage');
 
 
 
@@ -36,6 +37,10 @@ Route::group(['prefix'=>'admin'],function(){
 
         //Dashboard
         Route::get('/dashboard',[DashboardController::class,'dashboard'])->name('dashboard');
+        //Spot
+        Route::get('/viewspot',[SpotController::class,'viewspot'])->name('spot.view');
+        Route::get('/spotform',[SpotController::class,'spotform'])->name('spot.form');
+        Route::post('/createspot',[SpotController::class,'createspot'])->name('spot.create');
     });
 
 });

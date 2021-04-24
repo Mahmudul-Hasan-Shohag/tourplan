@@ -110,38 +110,24 @@
 			</div>
 		</div>
 <!--==============================Content=================================-->
-		<div class="content"><div class="ic">More Website Templates @ TemplateMonster.com - February 10, 2014!</div>
-			<div class="container_12">
+@foreach($spot as $data)
+<div class="content"><div class="ic"></div>
+<div class="container_12">
 				<div class="grid_4">
 					<div class="banner">
-						<img src="{{url('images/sm.jpg')}}" alt="">
+					<img width="" src="{{url('/uploads/spot/'.$data->spot_image)}}" alt="img">
 						<div class="label">
-							<div class="title">Barcelona</div>
-							<div class="price">FROM<span>$ 1000</span></div>
+							<div class="title" style="color:black"></div>
+							<div class="price">Journey date:{{$data->date}}<span>{{$data->destination}}</span><span>{{$data->cost}} BDT</span></div>
 							<a href="#">LEARN MORE</a>
+							
 						</div>
 					</div>
-				</div>
-				<div class="grid_4">
-					<div class="banner">
-						<img src="{{url('images/sm.jpg')}}" alt="">
-						<div class="label">
-							<div class="title">GOA</div>
-							<div class="price">FROM<span>$ 1.500</span></div>
-							<a href="#">LEARN MORE</a>
-						</div>
-					</div>
-				</div>
-				<div class="grid_4">
-					<div class="banner">
-						<img src="{{url('images/sm.jpg')}}" alt="">
-						<div class="label">
-							<div class="title">PARIS</div>
-							<div class="price">FROM<span>$ 1.600</span></div>
-							<a href="#">LEARN MORE</a>
-						</div>
-					</div>
-				</div>
+				</div>	
+
+@endforeach
+
+
 				<div class="clear"></div>
 				<div class="grid_6">
 					<h3>Booking Form</h3>
