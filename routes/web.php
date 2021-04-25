@@ -41,6 +41,7 @@ Route::group(['prefix'=>'admin'],function(){
         Route::get('/viewspot',[SpotController::class,'viewspot'])->name('spot.view');
         Route::get('/spotform',[SpotController::class,'spotform'])->name('spot.form');
         Route::post('/createspot',[SpotController::class,'createspot'])->name('spot.create');
+        Route::get('/spotdetails/{id}',[SpotController::class,'spotdetails'])->name('spot.details');
     });
 
 });

@@ -110,22 +110,29 @@
 			</div>
 		</div>
 <!--==============================Content=================================-->
-@foreach($spot as $data)
+
 <div class="content"><div class="ic"></div>
+
 <div class="container_12">
+
+@foreach($spot as $data)
+
 				<div class="grid_4">
+				<br>
 					<div class="banner">
-					<img width="" src="{{url('/uploads/spot/'.$data->spot_image)}}" alt="img">
+					<img width="300" height="300" src="{{url('/uploads/spot/'.$data->spot_image)}}" alt="img">
 						<div class="label">
 							<div class="title" style="color:black"></div>
 							<div class="price">Journey date:{{$data->date}}<span>{{$data->destination}}</span><span>{{$data->cost}} BDT</span></div>
-							<a href="#">LEARN MORE</a>
+							<a href="{{route('spot.details',$data->id)}}">Show Details</a>
 							
 						</div>
 					</div>
 				</div>	
+				
+				@endforeach
+				
 
-@endforeach
 
 
 				<div class="clear"></div>

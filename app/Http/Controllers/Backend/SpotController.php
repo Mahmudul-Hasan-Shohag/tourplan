@@ -41,4 +41,10 @@ Spot::create([
 ]);
   return redirect()->back();      
     }
+
+    public function spotdetails($id){
+
+$spot=Spot::find($id);
+        return view('backend.layouts.spot.spotdetails',compact('spot'));
+    }
 }

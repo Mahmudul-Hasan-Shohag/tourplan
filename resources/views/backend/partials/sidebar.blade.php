@@ -32,7 +32,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
                                 aria-expanded="false">
                                 <i class="fa fa-font" aria-hidden="true"></i>
-                                <span class="hide-menu">Plan</span>
+                                <span class="hide-menu">Planer</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
@@ -54,6 +54,13 @@
                                 aria-expanded="false">
                                 <i class="fa fa-info-circle" aria-hidden="true"></i>
                                 <span class="hide-menu">Payments</span>
+                            </a>
+                        </li>
+                        <li class="sidebar-item">
+                            <a class="sidebar-link waves-effect waves-dark sidebar-link" href="404.html"
+                                aria-expanded="false">
+                                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                                <span class="hide-menu">Offers</span>
                             </a>
                         </li>
                         <li class="sidebar-item">
