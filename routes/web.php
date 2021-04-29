@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\PlannerController;
+use App\Http\Controllers\Frontend\FrontendproductController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ProductsController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -33,8 +34,9 @@ Route::get('/user/logout',[UserController::class,'userlogout'])->name('user.logo
 //Planner login registration
 Route::get('/planner/registration',[PlannerController::class,'plannerregistration'])->name('planner.registration');
 Route::get('/planner/login',[PlannerController::class,'plannerlogin'])->name('planner.login');
-
-
+//Products
+Route::get('/products',[FrontendproductController::class,'products'])->name('frontend.products');
+Route::get('frontend/product/categories{id}',[FrontendproductController::class,'frontendproductcategories'])->name('frontend.product.categories');
 //Backend
 //Admin Login
 Route::get('/adminlogin',[AdminController::class,'adminlogin'])->name('admin.login');
