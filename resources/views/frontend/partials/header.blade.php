@@ -9,9 +9,11 @@
 								<li><a href="index-2.html">SPECIAL OFFERS</a></li>
                                 <li class="current"><a href="index.html">Products</a></li>
                                 <li><a href="index-1.html">Payments</a></li>
-                                <li><a href="index-3.html">Traveller Registration</a></li>
+                                <li><a href="{{route('user.registration')}}">User</a></li>
+								<li><a href="{{route('planner.registration')}}">Planner</a></li>
 								<li><a href="{{route('dashboard')}}">Admin</a></li>
-                                <li><a href="index-3.html">Logout</a></li>
+								
+								
 							</ul>
 						</nav>
 						<div class="clear"></div>

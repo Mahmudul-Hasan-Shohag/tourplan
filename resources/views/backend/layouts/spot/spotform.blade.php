@@ -1,6 +1,7 @@
 @extends('backend.master')
 @section('content')
-<form style="padding-left:20px" action="{{route('spot.create')}}" method="post" enctype="multipart/form-data">
+<h1  class=" col-md-6" style="text-align: center;color:white;background-color:salmon;"><b> Add Spot Details </b></h1>
+<form style="" action="{{route('spot.create')}}" method="post" enctype="multipart/form-data">
 @csrf
   <div class="form-group col-md-6">
     <label for="spot_name">Spot Name</label>

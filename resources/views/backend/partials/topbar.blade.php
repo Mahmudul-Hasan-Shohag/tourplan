@@ -11,7 +11,7 @@
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                           <h1 style="color:red"><i><u>My Tour Plan</i></u></h1>
+                            <h1 style="color:red"><i><u><a href="{{route('homepage')}}">My Tour Plan</a></i></u></h1>
                         </span>
                     </a>
                     <!-- ============================================================== -->

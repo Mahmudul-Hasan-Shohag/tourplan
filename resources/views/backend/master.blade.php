@@ -68,6 +68,12 @@
     <script src="https://wrappixel.com/demos/admin-templates/ampleadmin/ample-admin-lite/plugins/bower_components/chartist/dist/chartist.min.js"></script>
     <script src="https://wrappixel.com/demos/admin-templates/ampleadmin/ample-admin-lite/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
     <script src="https://wrappixel.com/demos/admin-templates/ampleadmin/ample-admin-lite/js/pages/dashboards/dashboard1.js"></script>
+   
+   <!-- Bootstrap core JavaScript-->
+   <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/vendor/jquery/jquery.min.js"></script>
+    <script src="https://startbootstrap.github.io/startbootstrap-sb-admin-2/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    
 </body>
 
 </html>
