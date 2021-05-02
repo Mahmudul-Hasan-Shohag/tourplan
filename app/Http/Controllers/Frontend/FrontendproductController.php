@@ -18,4 +18,10 @@ class FrontendproductController extends Controller
     $products=Product::where('product_category',$id)->get();
     return view('frontend.layouts.productcategories',compact('products','category'));
    }
+   public function productsearch(Request $request){
+       $search=$request->search;
+        $products=Product::where('product_name','like','%'.$search.'%')->get();
+        $category=Category::all();
+    return view('frontend.layouts.products',compact('products','category','search'));
+   }
 }

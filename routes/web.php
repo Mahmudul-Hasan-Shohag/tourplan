@@ -5,6 +5,7 @@ use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserController;
 use App\Http\Controllers\Frontend\PlannerController;
 use App\Http\Controllers\Frontend\FrontendproductController;
+use App\Http\Controllers\Frontend\OrderController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\Backend\ProductsController;
 use App\Http\Controllers\Backend\CategoryController;
@@ -25,6 +26,8 @@ use App\Http\Controllers\Backend\AdminController;
 //Frontend
 Route::get('/',[HomeController::class,'website'])->name('homepage');
 
+
+
 //User login registration
 Route::get('/user/registration',[UserController::class,'userregistration'])->name('user.registration');
 Route::post('/user/create/registration',[UserController::class,'createregistration'])->name('create.registration');
@@ -37,6 +40,14 @@ Route::get('/planner/login',[PlannerController::class,'plannerlogin'])->name('pl
 //Products
 Route::get('/products',[FrontendproductController::class,'products'])->name('frontend.products');
 Route::get('frontend/product/categories{id}',[FrontendproductController::class,'frontendproductcategories'])->name('frontend.product.categories');
+//search
+Route::post('/products/search',[FrontendproductController::class,'productsearch'])->name('product.search');
+
+//Cart
+Route::get('/add-to-cart{id}',[OrderController::class,'addToCart'])->name('cart.add');
+Route::get('/cart/view',[OrderController::class,'cartview'])->name('cart.view');
+Route::get('remove/cart{rowId}',[ OrderController::class,'removecart'])->name('cart.remove');
+Route::post('update/cart{rowId}',[ OrderController::class,'updatecart'])->name('cart.update');
 //Backend
 //Admin Login
 Route::get('/adminlogin',[AdminController::class,'adminlogin'])->name('admin.login');

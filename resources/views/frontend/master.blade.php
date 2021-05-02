@@ -7,6 +7,7 @@
 		<meta name="format-detection" content="telephone=no" />
 		<link rel="icon" href="images/favicon.ico">
 		<link rel="shortcut icon" href="images/favicon.ico" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 		<link rel="stylesheet" href="https://demo.themezy.com/system/resources/demo_themes/000/000/138//booking/css/booking.css">
 		<link rel="stylesheet" href="https://demo.themezy.com/system/resources/demo_themes/000/000/138//css/camera.css">
 		<link rel="stylesheet" href="https://demo.themezy.com/system/resources/demo_themes/000/000/138//css/owl.carousel.css">
@@ -71,7 +72,7 @@
 
 		<div class="slider_wrapper">
 			<div id="camera_wrap" class="">
-				<div data-src="images/sa.jpg">
+				<div data-src="images/nw.jpeg">
 					<div class="caption fadeIn">
 						<h2></h2>
 						<div class="price">
