@@ -40,7 +40,7 @@
   @foreach($products as $key=>$data)
     <tr>
       <th scope="row">{{$key+1}}</th>
-      <td>{{$data->product_id}}</td>
+      <td>{{$data->id}}</td>
       <td>{{$data->product_name}}</td>
       <td>{{$data->productCategory->category_name}}</td>
       <td>{{$data->quantity}}</td>

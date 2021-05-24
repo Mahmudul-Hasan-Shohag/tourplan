@@ -167,7 +167,7 @@
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center px-0">
                     Shipping
-                    <span>65</span>
+                    <span>45</span>
                   </li>
                   <li class="list-group-item d-flex justify-content-between align-items-center border-0 px-0 mb-3">
                     <div>
@@ -179,13 +179,36 @@
                   @php
 $total=(float) str_replace(',','',Cart::subtotal());
                   @endphp
-                    <span><strong>{{$total+65}} BDT</strong></span>
+                    <span><strong>{{$total+45}} BDT</strong></span>
                   </li>
                 </ul>
 
-                <button type="button" class="btn btn-primary btn-block waves-effect waves-light">
-                  checkout</button>
+               
 
+  <form action="{{route('order.confirm')}}" method="post">
+@csrf
+
+<div class="form-group">
+    <label for="cus_address">Enter Your Location</label>
+    <input type="text" class="form-control" name="cus_address">
+    
+  </div>
+  <input type="hidden" class="form-control"  name="customer_id" value="{{auth()->user()->id}}">  
+  <input type="hidden" class="form-control"  name="cus_name" value="{{auth()->user()->name}}"> 
+  <input type="hidden" class="form-control"  name="cus_mobile" value="{{auth()->user()->number}}">  
+  <input type="hidden" class="form-control"  name="cus_email" value="{{auth()->user()->email}}">          
+  <input type="hidden" class="form-control"  name="order_date" value="{{date('d/m/y')}}">
+  <input type="hidden" class="form-control"  name="order_status" value="Pending">
+  <input type="hidden" class="form-control"  name="total_products" value="{{Cart::count()}}">
+  <input type="hidden" class="form-control"  name="subtotal" value="{{Cart::subtotal()}}">
+  <input type="hidden" class="form-control"  name="totalprice" value="{{Cart::subtotal()}}">
+
+
+
+
+                <button type="submit" href="{{route('order.confirm')}}" class="btn btn-warning btn-block waves-effect waves-light">
+                  Order Confirm</a>
+</form>
               </div>
             </div>
             <!-- Card -->

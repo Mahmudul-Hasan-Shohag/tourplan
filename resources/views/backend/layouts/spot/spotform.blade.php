@@ -27,7 +27,7 @@
   </div>
   <div class="form-group col-md-6">
     <label for="description">Description</label>
-    <input type="description" class="form-control" id="description" name="description">
+    <textarea type="text" class="form-control" id="description" name="description"></textarea>
   </div>
   <div class="form-group col-md-6">
     <label for="spot_image">Upload a photo</label>

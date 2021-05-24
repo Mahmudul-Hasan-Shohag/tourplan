@@ -1,10 +1,10 @@
 @extends('backend.master')
 @section('content')
 <p class="text-center"> <a class="btn btn-info" href="{{route('spot.form')}}"> Add Spot</a></p>
-<table class="table table-striped">
+<table class="table table-bordered">
   <thead>
     <tr class="table-info">
-     
+      <th scope="col">Spot ID</th>
       <th scope="col">Spot Name</th>
       <th scope="col">Destination</th>
       <th scope="col">cost</th>
@@ -16,7 +16,7 @@
   <tbody>
   @foreach($spot as $key=>$data)
     <tr>
-    
+      <td>{{$data->id}}</td>
       <td>{{$data->spot_name}}</td>
       <td>{{$data->destination}}</td>
       <td>{{$data->cost}}</td>

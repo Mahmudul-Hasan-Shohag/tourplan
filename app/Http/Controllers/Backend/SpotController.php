@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Controller;
 use App\Models\Spot;
+use App\Models\Traveller;
+use App\Models\PlannerSpot;
 use Illuminate\Http\Request;
 
 class SpotController extends Controller
@@ -47,4 +49,22 @@ Spot::create([
 $spot=Spot::find($id);
         return view('backend.layouts.spot.spotdetails',compact('spot'));
     }
+    public function joinspot(Request $request){
+Traveller::create([
+'spot_id'=>$request->spot_id,
+'spot_name'=>$request->spot_name,
+'destination'=>$request->destination,
+'traveller_id'=>$request->traveller_id,
+'traveller_name'=>$request->traveller_name,
+'traveller_mobile'=>$request->traveller_mobile,
+'traveller_email'=>$request->traveller_email,
+]);
+return redirect()->back()->with('message','Your have joined for this tour.Have a safe journey!');
+    }
+public function plannerspot(){
+    $spot=PlannerSpot::all();
+    return view('backend.layouts.spot.plannerspot',compact('spot'));
+}
+   
+
 }

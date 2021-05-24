@@ -34,10 +34,11 @@ return view('backend.layouts.products.productview',compact('products','category'
         }
         
              Product::create([
-                'product_id'=>$request->product_id,
                 'product_name'=>$request->product_name,
                 'product_category'=>$request->product_category,
                 'quantity'=>$request->quantity,
+                'size'=>$request->size,
+                'color'=>$request->color,
                 'price'=>$request->price,
                 'product_image'=>$filename
         

@@ -123,9 +123,6 @@
                 <div class="form-group">
                 <button type="submit"  class="btn btn-success btn-block">Sign Up</button>
             </div> 
-            <div class="form-group">
-                <a  class="btn btn-primary btn-block" href="{{route('user.login')}}">Login</a>
-                </div> 
 
                 <div class="form-group">
                <p ><h3 style="color:red">@auth ()

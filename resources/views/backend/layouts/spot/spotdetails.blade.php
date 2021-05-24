@@ -1,5 +1,3 @@
-
-
 <!doctype html>
 <html lang="en">
   <head>
@@ -7,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.82.0">
-    <title>Spot Details</title>
+    <meta name="generator" content="Hugo 0.83.1">
+    <title>Jumbotron example · Bootstrap v5.0</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/carousel/">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/jumbotron/">
 
     
 
     <!-- Bootstrap core CSS -->
-<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+<link href="https://getbootstrap.com/docs/5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- Favicons -->
 <link rel="apple-touch-icon" href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
@@ -42,11 +40,7 @@
         }
       }
     </style>
-
-    
-    <!-- Custom styles for this template -->
-    <link href="carousel.css" rel="stylesheet">
-  </head>
+    </head>
   <body>
     
 
@@ -77,6 +71,11 @@
 
     <div class="row featurette">
       <div class="col-md-7 order-md-2">
+      @if(session()->has('message'))
+<div class="alert alert-success">
+{{session()->get('message')}}
+</div>
+@endif
         <h1 class="featurette-heading" style="color:blue"><u>{{$spot->destination}} </u><span class="text-muted"></span></h2>
         <hr>
         <h5 class="" style="color:black">Spot Location:  {{$spot->spot_name}}</h5>
@@ -85,16 +84,27 @@
         <h5 class="" style="color:black">Journey Date:  {{$spot->date}}</h5>
         <hr>
         
-        <h5 class="" style="color:red"><u>About Spot:</u></h5>
+        <h5 class="" style="color:red"><u>About :</u></h5>
         <br>
         <p> {{$spot->description}}</p>
       </div>
       <div class="col-md-5 order-md-1">
         <img width="450" height="450"src="{{url('/uploads/spot/'.$spot->spot_image)}}" alt="">
         <hr>
-<a class="btn btn-success" href="">Join now</a>
+        <form action="{{route('spot.join')}}" method="post">
+@csrf
+<input type="hidden" name="spot_id" value="{{$spot->id}}">
+<input type="hidden" name="spot_name" value="{{$spot->spot_name}}">
+<input type="hidden" name="destination" value="{{$spot->destination}}">
+<input type="hidden" name="traveller_id" value="{{auth()->user()->id}}">
+<input type="hidden" name="traveller_name" value="{{auth()->user()->name}}">
+<input type="hidden" name="traveller_mobile" value="{{auth()->user()->number}}">
+<input type="hidden" name="traveller_email" value="{{auth()->user()->email}}">
+<button type="submit"class="btn btn-success" >Join now</button>
+
 <a class="btn btn-danger" href="">Cancel Tour</a>
-      </div>
+</form>
+     </div>
     </div>
 
     

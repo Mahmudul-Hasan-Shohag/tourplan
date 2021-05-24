@@ -142,6 +142,10 @@
                         <div class="col-sm-12 controls">
                             <button type="submit" href="#" class="btn btn-primary pull-right"><i class="glyphicon glyphicon-log-in"></i> Log in</button>                          
                         </div>
+
+						<div class="col-sm-12 controls">
+                            <a href="{{route('user.registration')}}" class="btn btn-success pull-left"> Don't have account?</a>                          
+                        </div>
                     </div>
 
                 </form>     

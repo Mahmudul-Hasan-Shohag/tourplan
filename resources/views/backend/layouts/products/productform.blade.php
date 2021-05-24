@@ -3,11 +3,7 @@
 <h1  class=" col-md-10" style="text-align: center;color:white;background-color:navy;"><b> Add Products </b></h1>
 <form class=" col-md-10" action="{{route('product.create')}}" method="post" enctype="multipart/form-data">
 @csrf
-  <div class="form-group">
-    <label for="product_id">ID</label>
-    <input type="text" class="form-control" id="product_id" name="product_id" >
-    
-  </div>
+ 
 
   <div class="form-group">
     <label for="product_name">Name</label>
@@ -27,6 +23,17 @@
   <div class="form-group">
     <label for="quantity">Quantity</label>
     <input type="number" class="form-control" id="quantity" name="quantity" >
+    
+  </div>
+  <div>
+  <div class="form-group">
+    <label for="size">Size</label>
+    <input type="text" class="form-control" name="size" >
+    
+  </div>
+  <div class="form-group">
+    <label for="color">Color</label>
+    <input type="text" class="form-control" name="color" >
     
   </div>
   <div>
